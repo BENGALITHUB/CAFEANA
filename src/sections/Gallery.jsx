@@ -1,3 +1,4 @@
+import { assetUrl } from '../services/assetUrl';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Eye } from 'lucide-react';
@@ -104,7 +105,7 @@ export default function Gallery({ onSelectImage }) {
                 }}
               >
                 <img
-                  src={item.image}
+                  src={assetUrl(item.image)}
                   alt={item.title || 'Cafeana Visual'}
                   loading="lazy"
                   style={{

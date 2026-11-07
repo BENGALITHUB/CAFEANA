@@ -1,3 +1,4 @@
+import { assetUrl } from '../services/assetUrl';
 import React, { useState, useEffect } from 'react';
 import { Menu, X, UtensilsCrossed, ArrowRight } from 'lucide-react';
 import Button from './Button';
@@ -74,7 +75,7 @@ export default function Navbar({ inPreview = false }) {
             {header.logoImage || content?.branding?.logoImage ? (
               <div className="brand-icon-wrap" style={{ padding: '2px', background: 'rgba(33, 24, 23, 0.6)' }}>
                 <img
-                  src={header.logoImage || content?.branding?.logoImage}
+                  src={assetUrl(header.logoImage || content?.branding?.logoImage)}
                   alt={header.brandName || 'Brand Logo'}
                   style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '50%' }}
                 />

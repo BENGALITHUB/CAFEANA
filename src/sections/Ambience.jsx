@@ -1,3 +1,4 @@
+import { assetUrl } from '../services/assetUrl';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Coffee, Users, Moon, Palette } from 'lucide-react';
@@ -61,7 +62,7 @@ export default function Ambience({ onSelectImage }) {
             >
               <div style={{ height: '440px', width: '100%' }}>
                 <img
-                  src={currentMoment.image}
+                  src={assetUrl(currentMoment.image)}
                   alt={currentMoment.title}
                   style={{
                     width: '100%',

@@ -1,3 +1,4 @@
+import { assetUrl } from '../services/assetUrl';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Award } from 'lucide-react';
@@ -81,7 +82,7 @@ export default function SignatureDishes({ onSelectImage }) {
                       }}
                     >
                       <img
-                        src={item.image}
+                        src={assetUrl(item.image)}
                         alt={item.title}
                         loading="lazy"
                         style={{
