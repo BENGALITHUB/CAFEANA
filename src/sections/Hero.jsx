@@ -1,3 +1,4 @@
+import { assetUrl } from '../services/assetUrl';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Compass, Sparkles } from 'lucide-react';
@@ -64,7 +65,7 @@ export default function Hero() {
         }}
       >
         <img
-          src={hero.bgImage || '/images/hero-bg.jpg'}
+          src={assetUrl(hero.bgImage || '/images/hero-bg.jpg')}
           alt="Cafeana Ambience"
           className="hero-zoom-bg"
           style={{

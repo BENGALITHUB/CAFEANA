@@ -1,3 +1,4 @@
+import { assetUrl } from '../services/assetUrl';
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Sparkles, ShieldCheck, Coffee } from 'lucide-react';
@@ -65,7 +66,7 @@ export default function About() {
               }}
             >
               <img
-                src={about.mainImage || '/images/about-interior.jpg'}
+                src={assetUrl(about.mainImage || '/images/about-interior.jpg')}
                 alt="Cafeana Warm Interior Ambience"
                 style={{
                   width: '100%',
@@ -100,7 +101,7 @@ export default function About() {
               }}
             >
               <img
-                src={about.secondaryImage || '/images/about-food.jpg'}
+                src={assetUrl(about.secondaryImage || '/images/about-food.jpg')}
                 alt="Artisan Culinary Plating at Cafeana"
                 style={{
                   width: '100%',

@@ -1,3 +1,4 @@
+import { assetUrl } from '../../services/assetUrl';
 import React, { useState, useRef } from 'react';
 import { Upload, Trash2, RotateCcw, AlertTriangle, CheckCircle, Image as ImageIcon } from 'lucide-react';
 import { optimizeImage } from '../../services/imageProcessor';
@@ -70,7 +71,7 @@ export default function ImageUploader({
         {value ? (
           <div>
             <img
-              src={value}
+              src={assetUrl(value)}
               alt="Uploaded Preview"
               className="admin-image-preview-thumb"
             />
