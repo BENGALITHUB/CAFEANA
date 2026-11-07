@@ -1,0 +1,24 @@
+#!/bin/sh
+# Pre-push hook to prevent direct pushes to protected branches
+
+protected_branches="main development"
+current_branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+
+while read local_ref local_oid remote_ref remote_oid
+do
+  for branch in $protected_branches
+  do
+    if [ "$remote_ref" = "refs/heads/$branch" ]; then
+      echo "\n❌ [BRANCH PROTECTION ERROR]"
+      echo "Direct push to '$branch' is strictly prohibited!"
+      echo "Please push to a feature branch (e.g. 'feature/your-feature' or 'sambit') and create a Pull Request."
+      echo "Example:"
+      echo "  git checkout -b feature/my-update"
+      echo "  git push origin feature/my-update"
+      echo "\n"
+      exit 1
+    fi
+  done
+done
+
+exit 0
