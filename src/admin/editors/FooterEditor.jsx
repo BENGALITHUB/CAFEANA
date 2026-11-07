@@ -163,6 +163,43 @@ export default function FooterEditor() {
     if (field === 'tagline') handleChange('tagline', val);
   };
 
+  // Additional Custom Columns Settings (Column 5, Column 6, etc.)
+  const customColumns = footer.customColumns || [];
+
+  const handleAddCustomColumn = () => {
+    const newColNumber = 4 + customColumns.length + 1;
+    const newCol = {
+      id: `col-${Date.now()}`,
+      title: `Column ${newColNumber}`,
+      text: 'Describe your offerings, private dining, or community updates here.',
+      tagline: '',
+      ctaText: '',
+      ctaLink: '#'
+    };
+    handleChange('customColumns', [...customColumns, newCol]);
+  };
+
+  const handleCustomColumnChange = (index, field, val) => {
+    const updated = [...customColumns];
+    updated[index] = { ...updated[index], [field]: val };
+    handleChange('customColumns', updated);
+  };
+
+  const handleDeleteCustomColumn = (index) => {
+    const updated = customColumns.filter((_, i) => i !== index);
+    handleChange('customColumns', updated);
+  };
+
+  const handleMoveCustomColumn = (index, direction) => {
+    const list = [...customColumns];
+    const targetIdx = index + direction;
+    if (targetIdx < 0 || targetIdx >= list.length) return;
+    const temp = list[index];
+    list[index] = list[targetIdx];
+    list[targetIdx] = temp;
+    handleChange('customColumns', list);
+  };
+
   return (
     <div>
       {/* 1. Company Logo & Favicon Suite */}
@@ -594,7 +631,152 @@ export default function FooterEditor() {
         )}
       </div>
 
-      {/* 6. Copyright Notice */}
+      {/* 6. Additional Custom Columns Manager */}
+      <div className="admin-card">
+        <div className="admin-card-header">
+          <div>
+            <h3 className="admin-card-title">Additional Custom Columns</h3>
+            <span style={{ fontSize: '0.78rem', color: '#7A6662' }}>
+              Add a 5th column, 6th column, or more to display additional menus, links, or notices
+            </span>
+          </div>
+          <button
+            type="button"
+            className="admin-btn admin-btn-gold"
+            style={{ fontSize: '0.82rem', padding: '0.4rem 0.85rem' }}
+            onClick={handleAddCustomColumn}
+          >
+            <Plus size={14} /> Add New Column
+          </button>
+        </div>
+
+        {customColumns.length === 0 ? (
+          <div style={{ padding: '1.5rem', background: '#FAF7F2', borderRadius: '4px', textAlign: 'center', border: '1px dashed #D4C3B3' }}>
+            <p style={{ margin: '0 0 0.75rem 0', color: '#7A6662', fontSize: '0.88rem' }}>
+              No extra columns added yet. The footer currently has {fourthCol.enabled !== false ? '4 columns' : '3 columns'}.
+            </p>
+            <button
+              type="button"
+              className="admin-btn admin-btn-outline"
+              style={{ fontSize: '0.82rem', padding: '0.4rem 0.85rem' }}
+              onClick={handleAddCustomColumn}
+            >
+              <Plus size={14} /> Add Column {fourthCol.enabled !== false ? '5' : '4'}
+            </button>
+          </div>
+        ) : (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            {customColumns.map((col, idx) => (
+              <div
+                key={col.id || idx}
+                style={{
+                  background: '#FAF7F2',
+                  border: '1px solid #D4C3B3',
+                  borderRadius: '6px',
+                  padding: '1.25rem'
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', borderBottom: '1px solid rgba(101,30,50,0.1)', paddingBottom: '0.5rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <span style={{ width: '22px', height: '22px', borderRadius: '50%', background: '#651E32', color: '#FFF', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700 }}>
+                      {idx + (fourthCol.enabled !== false ? 5 : 4)}
+                    </span>
+                    <strong style={{ color: '#3B101F', fontSize: '0.95rem' }}>{col.title || `Custom Column`}</strong>
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.35rem' }}>
+                    <button
+                      type="button"
+                      className="admin-btn-icon"
+                      onClick={() => handleMoveCustomColumn(idx, -1)}
+                      disabled={idx === 0}
+                      title="Move Left"
+                    >
+                      <ArrowUp size={14} />
+                    </button>
+                    <button
+                      type="button"
+                      className="admin-btn-icon"
+                      onClick={() => handleMoveCustomColumn(idx, 1)}
+                      disabled={idx === customColumns.length - 1}
+                      title="Move Right"
+                    >
+                      <ArrowDown size={14} />
+                    </button>
+                    <button
+                      type="button"
+                      className="admin-btn-icon"
+                      style={{ color: '#8A1C2C' }}
+                      onClick={() => handleDeleteCustomColumn(idx)}
+                      title="Delete Column"
+                    >
+                      <Trash2 size={14} />
+                    </button>
+                  </div>
+                </div>
+
+                <div className="admin-form-group">
+                  <label className="admin-label">Column Title</label>
+                  <input
+                    type="text"
+                    className="admin-input"
+                    value={col.title || ''}
+                    onChange={(e) => handleCustomColumnChange(idx, 'title', e.target.value)}
+                    placeholder="e.g. Private Dining / Press / Catering"
+                  />
+                </div>
+
+                <div className="admin-form-group">
+                  <label className="admin-label">Column Body Text</label>
+                  <textarea
+                    className="admin-textarea"
+                    style={{ minHeight: '80px' }}
+                    value={col.text || ''}
+                    onChange={(e) => handleCustomColumnChange(idx, 'text', e.target.value)}
+                    placeholder="Enter details, descriptions, or announcements..."
+                  />
+                </div>
+
+                <div className="admin-form-group">
+                  <label className="admin-label">Highlight Tagline / Badge</label>
+                  <input
+                    type="text"
+                    className="admin-input"
+                    value={col.tagline || ''}
+                    onChange={(e) => handleCustomColumnChange(idx, 'tagline', e.target.value)}
+                    placeholder="e.g. Exclusive Club / Michelin Selected"
+                  />
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div className="admin-form-group">
+                    <label className="admin-label">Optional Button Label</label>
+                    <input
+                      type="text"
+                      className="admin-input"
+                      value={col.ctaText || ''}
+                      onChange={(e) => handleCustomColumnChange(idx, 'ctaText', e.target.value)}
+                      placeholder="e.g. Inquire Now"
+                    />
+                  </div>
+
+                  <div className="admin-form-group">
+                    <label className="admin-label">Button Link</label>
+                    <input
+                      type="text"
+                      className="admin-input"
+                      value={col.ctaLink || ''}
+                      onChange={(e) => handleCustomColumnChange(idx, 'ctaLink', e.target.value)}
+                      placeholder="#contact or https://..."
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* 7. Copyright Notice */}
       <div className="admin-card">
         <div className="admin-card-header">
           <h3 className="admin-card-title">Copyright Notice</h3>

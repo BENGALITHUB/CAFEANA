@@ -38,6 +38,8 @@ export default function Footer() {
     tagline: footer.tagline || 'Snap. Sip. Savour. Repeat.'
   };
   const isFourthColActive = fourthCol.enabled !== false;
+  const customColumns = footer.customColumns || [];
+  const totalColumns = 3 + (isFourthColActive ? 1 : 0) + customColumns.length;
 
   const socialList = [
     { icon: Instagram, label: 'Instagram', href: contact.socialLinks?.instagram || '#instagram' },
@@ -76,9 +78,7 @@ export default function Footer() {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: isFourthColActive
-              ? 'repeat(auto-fit, minmax(220px, 1fr))'
-              : 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: `repeat(auto-fit, minmax(${totalColumns >= 4 ? '210px' : '260px'}, 1fr))`,
             gap: '3.5rem',
             marginBottom: '4.5rem'
           }}
@@ -323,6 +323,72 @@ export default function Footer() {
               )}
             </div>
           )}
+
+          {/* Additional Dynamic Custom Columns (Column 5, 6, etc.) */}
+          {customColumns.map((col) => (
+            <div key={col.id}>
+              <h4
+                style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: '1.35rem',
+                  letterSpacing: '0.08em',
+                  color: 'var(--color-champagne-gold)',
+                  marginBottom: '1.5rem'
+                }}
+              >
+                {col.title || 'Untitled Column'}
+              </h4>
+              {col.text && (
+                <p style={{ color: 'var(--color-soft-beige)', fontSize: '0.92rem', lineHeight: 1.7, marginBottom: '1.2rem' }}>
+                  {col.text}
+                </p>
+              )}
+              {col.tagline && (
+                <div
+                  style={{
+                    padding: '0.8rem 1.2rem',
+                    background: 'rgba(33, 24, 23, 0.45)',
+                    border: '1px solid rgba(198, 163, 106, 0.25)',
+                    borderRadius: '2px',
+                    textAlign: 'center',
+                    marginBottom: col.ctaText ? '1rem' : 0
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: '1.15rem',
+                      letterSpacing: '0.12em',
+                      color: 'var(--color-champagne-gold)',
+                      fontStyle: 'italic',
+                      display: 'block'
+                    }}
+                  >
+                    {col.tagline}
+                  </span>
+                </div>
+              )}
+              {col.ctaText && (
+                <a
+                  href={col.ctaLink || '#'}
+                  style={{
+                    display: 'inline-block',
+                    padding: '0.5rem 1rem',
+                    background: 'var(--color-primary-burgundy)',
+                    color: 'var(--color-warm-cream)',
+                    border: '1px solid var(--color-champagne-gold)',
+                    borderRadius: '2px',
+                    fontSize: '0.85rem',
+                    fontWeight: 500,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em'
+                  }}
+                >
+                  {col.ctaText}
+                </a>
+              )}
+            </div>
+          ))}
         </div>
 
         {/* Bottom Bar */}
