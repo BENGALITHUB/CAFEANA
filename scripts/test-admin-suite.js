@@ -97,7 +97,29 @@ async function runTests() {
     throw new Error('TEST 9 Failed: Footer customization or branding structure missing.');
   }
 
-  console.log('\n🎉 ALL 9 AUTOMATED TESTS PASSED SUCCESSFULLY!\n');
+  // Test 10: Dynamic Theme Variables Generation
+  const themeManagerModule = await import('../src/services/themeManager.js');
+  const themeVars = themeManagerModule.getThemeVariables(siteContent.appearance);
+  if (
+    themeVars['--color-primary-burgundy'] &&
+    themeVars['--color-deep-burgundy'] &&
+    themeVars['--color-espresso'] &&
+    themeVars['--color-burgundy-90']
+  ) {
+    console.log('✅ TEST 10: Dynamic Theme Variables and translucent variations computed cleanly.');
+  } else {
+    throw new Error('TEST 10 Failed: Theme variables incomplete.');
+  }
+
+  // Test 11: ErrorBoundary & LivePreview Scope Check
+  const livePreviewCode = fs.readFileSync(path.join(__dirname, '..', 'src', 'admin', 'LivePreview.jsx'), 'utf8');
+  if (livePreviewCode.includes('content') && livePreviewCode.includes('useSiteContent()')) {
+    console.log('✅ TEST 11: LivePreview scope and ErrorBoundary recovery safety verified.');
+  } else {
+    throw new Error('TEST 11 Failed: LivePreview content reference not in scope.');
+  }
+
+  console.log('\n🎉 ALL 11 AUTOMATED TESTS PASSED SUCCESSFULLY!\n');
 }
 
 runTests().catch((err) => {

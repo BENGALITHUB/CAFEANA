@@ -20,16 +20,15 @@ export default function AppearanceEditor() {
   };
 
   const handleChange = (field, val) => {
-    // Green prevention check
+    // Brand guidance check for non-traditional luxury tones
     if (typeof val === 'string' && val.startsWith('#')) {
       const hex = val.replace('#', '');
       if (hex.length === 6) {
         const r = parseInt(hex.substring(0, 2), 16);
         const g = parseInt(hex.substring(2, 4), 16);
         const b = parseInt(hex.substring(4, 6), 16);
-        if (g > 140 && g > r * 1.2 && g > b * 1.2) {
-          setColorWarning('STRICT BRAND RULE: Green colors are strictly prohibited at Cafeana. Please stick to burgundy, gold, espresso, and cream.');
-          return;
+        if (g > 140 && g > r * 1.1 && g > b * 1.1) {
+          setColorWarning('Brand Notice: Cafeana luxury brand guidelines recommend staying within burgundy, espresso, champagne-gold, and cream palettes.');
         } else {
           setColorWarning('');
         }

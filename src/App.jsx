@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { SiteContentProvider } from './context/SiteContentContext';
+import ErrorBoundary from './components/ErrorBoundary';
 import PublicHome from './pages/PublicHome';
 import AdminLogin from './admin/AdminLogin';
 import AdminDashboard from './admin/AdminDashboard';
@@ -17,7 +18,8 @@ export default function App() {
   return (
     <Router>
       <SiteContentProvider isAdmin={true}>
-        <Routes>
+        <ErrorBoundary>
+          <Routes>
           {/* Public Website Route */}
           <Route path="/" element={<PublicHome />} />
 
@@ -74,7 +76,8 @@ export default function App() {
           {/* Fallback to Home */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </SiteContentProvider>
+      </ErrorBoundary>
+    </SiteContentProvider>
     </Router>
   );
 }

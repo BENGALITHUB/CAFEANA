@@ -5,6 +5,7 @@ import LivePreview from './LivePreview';
 import EditorToolbar from './components/EditorToolbar';
 import PreviewToolbar from './components/PreviewToolbar';
 import ExportModal from './components/ExportModal';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 import DashboardOverview from './editors/DashboardOverview';
 import HeaderEditor from './editors/HeaderEditor';
@@ -118,6 +119,7 @@ export default function AdminDashboard() {
         />
 
         {/* Workspace Display */}
+        <ErrorBoundary>
         {isDedicatedFullPreview ? (
           <div className="admin-preview-pane" style={{ flex: '1 1 auto', minHeight: 0, height: '100%' }}>
             <PreviewToolbar
@@ -152,6 +154,7 @@ export default function AdminDashboard() {
             </div>
           </div>
         )}
+        </ErrorBoundary>
       </div>
 
       {/* Export Instructions Modal */}

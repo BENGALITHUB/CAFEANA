@@ -12,7 +12,7 @@ import Contact from '../sections/Contact';
 import Footer from '../components/Footer';
 
 export default function LivePreview({ showFullPreview }) {
-  const { previewMode, activeSection } = useSiteContent();
+  const { previewMode, activeSection, content } = useSiteContent();
 
   const renderActiveSectionOnly = () => {
     switch (activeSection) {
