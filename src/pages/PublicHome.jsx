@@ -23,15 +23,17 @@ export default function PublicHome() {
   const [activeLightboxItem, setActiveLightboxItem] = useState(null);
 
   useEffect(() => {
-    // Initialize Lenis smooth scroll
-    const scrollInstance = initSmoothScroll();
+    // Initialize Lenis smooth scroll if animations are enabled
+    if (content?.appearance?.animationsEnabled !== false) {
+      const scrollInstance = initSmoothScroll();
 
-    return () => {
-      if (scrollInstance && scrollInstance.destroy) {
-        scrollInstance.destroy();
-      }
-    };
-  }, []);
+      return () => {
+        if (scrollInstance && scrollInstance.destroy) {
+          scrollInstance.destroy();
+        }
+      };
+    }
+  }, [content?.appearance?.animationsEnabled]);
 
   const handlePreloaderComplete = () => {
     setLoading(false);
