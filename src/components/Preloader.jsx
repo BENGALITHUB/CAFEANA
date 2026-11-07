@@ -42,13 +42,13 @@ export default function Preloader({ onComplete }) {
             position: 'fixed',
             inset: 0,
             zIndex: 9999,
-            backgroundColor: '#3B101F',
-            backgroundImage: 'radial-gradient(circle at center, #651E32 0%, #3B101F 60%, #211817 100%)',
+            backgroundColor: 'var(--color-deep-burgundy)',
+            backgroundImage: 'radial-gradient(circle at center, var(--color-primary-burgundy) 0%, var(--color-deep-burgundy) 60%, var(--color-espresso) 100%)',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#F7F0E7',
+            color: 'var(--color-warm-cream)',
             overflow: 'hidden'
           }}
         >
@@ -139,7 +139,7 @@ export default function Preloader({ onComplete }) {
                 fontSize: 'clamp(2.4rem, 5vw, 3.4rem)',
                 letterSpacing: '0.25em',
                 fontWeight: 600,
-                color: '#F7F0E7',
+                color: 'var(--color-warm-cream)',
                 margin: 0,
                 textTransform: 'uppercase'
               }}
@@ -151,7 +151,7 @@ export default function Preloader({ onComplete }) {
                 fontFamily: 'var(--font-body)',
                 fontSize: '0.78rem',
                 letterSpacing: '0.35em',
-                color: '#C6A36A',
+                color: 'var(--color-champagne-gold)',
                 textTransform: 'uppercase',
                 marginTop: '0.5rem'
               }}
@@ -175,7 +175,7 @@ export default function Preloader({ onComplete }) {
               <motion.div
                 style={{
                   height: '100%',
-                  background: 'linear-gradient(90deg, #651E32, #C6A36A)',
+                  background: 'linear-gradient(90deg, var(--color-primary-burgundy), var(--color-champagne-gold))',
                   width: `${percent}%`,
                   transition: 'width 0.1s ease-out'
                 }}

@@ -10,6 +10,7 @@ import {
   setAdminAuth
 } from '../services/contentStorage';
 import { ADMIN_CREDENTIALS } from '../config/adminConfig';
+import { applyThemeVariables } from '../services/themeManager';
 
 const SiteContentContext = createContext(null);
 
@@ -55,6 +56,13 @@ export function SiteContentProvider({ children, isAdmin = false }) {
       }
     }
   }, [content?.branding?.logoImage, content?.header?.logoImage, content?.footer?.logoImage]);
+
+  // Synchronize CSS custom properties and fonts across the website whenever appearance changes
+  useEffect(() => {
+    if (content?.appearance) {
+      applyThemeVariables(content.appearance);
+    }
+  }, [content?.appearance]);
 
   /**
    * Updates company logo everywhere (Header, Footer, Branding, and Browser Favicon)

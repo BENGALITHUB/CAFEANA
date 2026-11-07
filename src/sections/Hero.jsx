@@ -81,7 +81,8 @@ export default function Hero() {
           style={{
             position: 'absolute',
             inset: 0,
-            background: `linear-gradient(180deg, rgba(33, 24, 23, ${overlayOpacity * 0.9}) 0%, rgba(59, 16, 31, ${overlayOpacity}) 50%, rgba(33, 24, 23, ${Math.min(overlayOpacity * 1.1, 1)}) 100%)`
+            background: 'linear-gradient(180deg, var(--color-espresso-95) 0%, var(--color-burgundy-90) 50%, var(--color-espresso-95) 100%)',
+            opacity: overlayOpacity
           }}
         />
 

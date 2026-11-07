@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSiteContent } from '../context/SiteContentContext';
+import { getThemeVariables } from '../services/themeManager';
 import Navbar from '../components/Navbar';
 import Hero from '../sections/Hero';
 import About from '../sections/About';
@@ -82,15 +83,17 @@ export default function LivePreview({ showFullPreview }) {
   };
 
   const isFull = showFullPreview || activeSection === 'fullPreview' || activeSection === 'dashboard';
+  const themeVars = getThemeVariables(content?.appearance || {});
 
   return (
-    <div className={`admin-preview-viewport ${previewMode}`}>
+    <div className={`admin-preview-viewport ${previewMode}`} style={themeVars}>
       <div
         className="live-preview-content"
         style={{
           width: '100%',
           overflowX: 'hidden',
-          position: 'relative'
+          position: 'relative',
+          ...themeVars
         }}
       >
         {isFull ? (

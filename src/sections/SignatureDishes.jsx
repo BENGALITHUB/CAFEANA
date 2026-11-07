@@ -21,7 +21,7 @@ export default function SignatureDishes({ onSelectImage }) {
       className="section section-burgundy"
       style={{
         position: 'relative',
-        background: 'radial-gradient(circle at 50% 30%, #651E32 0%, #3B101F 65%, #211817 100%)'
+        background: 'radial-gradient(circle at 50% 30%, var(--color-primary-burgundy) 0%, var(--color-deep-burgundy) 65%, var(--color-espresso) 100%)'
       }}
     >
       <div className="container">
