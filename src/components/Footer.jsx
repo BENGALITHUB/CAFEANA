@@ -1,3 +1,4 @@
+import { assetUrl } from '../services/assetUrl';
 import React from 'react';
 import { UtensilsCrossed, Instagram, Facebook, Twitter, Youtube, Clock, ArrowUp } from 'lucide-react';
 import { useSiteContent } from '../context/SiteContentContext';
@@ -103,7 +104,7 @@ export default function Footer() {
                   }}
                 >
                   <img
-                    src={customLogo}
+                    src={assetUrl(customLogo)}
                     alt={footer.brandName || 'Brand Logo'}
                     style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '50%' }}
                   />

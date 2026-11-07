@@ -1,3 +1,4 @@
+import { assetUrl } from '../services/assetUrl';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Sparkles, Check, ChevronDown, ChevronUp } from 'lucide-react';
@@ -154,7 +155,7 @@ export default function Menu({ onSelectImage }) {
                   }}
                 >
                   <img
-                    src={cat.image}
+                    src={assetUrl(cat.image)}
                     alt={cat.name}
                     loading="lazy"
                     style={{

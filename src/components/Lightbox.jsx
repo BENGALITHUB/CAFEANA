@@ -1,3 +1,4 @@
+import { assetUrl } from '../services/assetUrl';
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
@@ -80,7 +81,7 @@ export default function Lightbox({ item, onClose }) {
 
           <div style={{ maxHeight: '72vh', overflow: 'hidden', background: '#000' }}>
             <img
-              src={item.image}
+              src={assetUrl(item.image)}
               alt={item.title || 'Cafeana Photography'}
               style={{
                 width: '100%',

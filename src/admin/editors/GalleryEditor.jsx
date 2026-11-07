@@ -1,3 +1,4 @@
+import { assetUrl } from '../../services/assetUrl';
 import React, { useRef } from 'react';
 import { Plus, Trash2, ArrowUp, ArrowDown, Eye, EyeOff, Upload, Image as ImageIcon } from 'lucide-react';
 import { useSiteContent } from '../../context/SiteContentContext';
@@ -194,7 +195,7 @@ export default function GalleryEditor() {
                 {/* Thumb Header with actions */}
                 <div style={{ position: 'relative', height: '160px', background: '#211817' }}>
                   <img
-                    src={item.image}
+                    src={assetUrl(item.image)}
                     alt={item.title}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
