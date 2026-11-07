@@ -1,0 +1,60 @@
+:root {
+  /* Core Brand Palette - STRICTLY NO GREEN */
+  --color-primary-burgundy: #651E32;
+  --color-deep-burgundy: #3B101F;
+  --color-espresso: #211817;
+  --color-warm-cream: #F7F0E7;
+  --color-champagne-gold: #C6A36A;
+  --color-soft-beige: #E8D8C5;
+  --color-white: #FFFFFF;
+
+  /* Translucent & Ambient Variations */
+  --color-burgundy-90: rgba(59, 16, 31, 0.92);
+  --color-burgundy-75: rgba(59, 16, 31, 0.75);
+  --color-burgundy-50: rgba(101, 30, 50, 0.5);
+  --color-espresso-95: rgba(33, 24, 23, 0.95);
+  --color-espresso-80: rgba(33, 24, 23, 0.8);
+  --color-gold-30: rgba(198, 163, 106, 0.3);
+  --color-gold-15: rgba(198, 163, 106, 0.15);
+  --color-cream-10: rgba(247, 240, 231, 0.1);
+  --color-cream-20: rgba(247, 240, 231, 0.2);
+
+  /* Semantic Typography Colors */
+  --text-primary-light: #F7F0E7;
+  --text-secondary-light: #D4C3B3;
+  --text-muted-light: #A89585;
+  --text-gold: #C6A36A;
+  --text-primary-dark: #211817;
+  --text-secondary-dark: #4A3A37;
+  --text-muted-dark: #7A6662;
+
+  /* Typography Families */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-editorial: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Spacing Scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --space-3xl: 8rem;
+
+  /* Transitions */
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-normal: 0.4s;
+  --duration-slow: 0.8s;
+
+  /* Shadows & Glows */
+  --glow-gold: 0 0 30px rgba(198, 163, 106, 0.25);
+  --glow-burgundy: 0 10px 40px rgba(101, 30, 50, 0.4);
+  --shadow-card: 0 20px 40px rgba(33, 24, 23, 0.35);
+  --shadow-card-hover: 0 30px 60px rgba(33, 24, 23, 0.5);
+
+  /* Container & Layout */
+  --max-width: 1320px;
+  --header-height: 90px;
+}

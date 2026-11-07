@@ -1,0 +1,378 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-11-07T12:00:00Z",
+  "branding": {
+    "logoImage": "",
+    "favicon": "",
+    "brandName": "CAFEANA",
+    "brandSubtitle": "Restaurant & Café"
+  },
+  "header": {
+    "visible": true,
+    "logoImage": "",
+    "brandName": "CAFEANA",
+    "brandSubtitle": "Restaurant & Café",
+    "logoIcon": "utensils",
+    "ctaText": "Explore Menu",
+    "ctaLink": "#menu",
+    "isSticky": true,
+    "navLinks": [
+      { "id": "nav-1", "name": "Home", "href": "#home" },
+      { "id": "nav-2", "name": "About", "href": "#about" },
+      { "id": "nav-3", "name": "Menu", "href": "#menu" },
+      { "id": "nav-4", "name": "Experience", "href": "#experience" },
+      { "id": "nav-5", "name": "Gallery", "href": "#gallery" },
+      { "id": "nav-6", "name": "Contact", "href": "#contact" }
+    ]
+  },
+  "hero": {
+    "visible": true,
+    "badge": "WELCOME TO CAFEANA",
+    "headlineLine1": "A Little Escape.",
+    "headlineLine2": "A Lot of Flavour.",
+    "description": "Where global flavours meet comfort, and every sip and bite becomes a beautiful memory.",
+    "ctaPrimaryText": "Explore Our Menu",
+    "ctaPrimaryLink": "#menu",
+    "ctaSecondaryText": "Discover Cafeana",
+    "ctaSecondaryLink": "#about",
+    "brandSignature": "SNAP. SIP. SAVOUR. REPEAT.",
+    "bgImage": "/images/hero-bg.jpg",
+    "overlayOpacity": 0.88,
+    "textAlignment": "center"
+  },
+  "about": {
+    "visible": true,
+    "badge": "THE CAFEANA PHILOSOPHY",
+    "title": "More Than Just a Café.",
+    "quote": "“Cafeana is where global flavours meet comfort, quality and good vibes. We believe that great food, a welcoming ambience and meaningful moments make every visit special.”",
+    "description": "From the sizzle of high-heat wok tossing and aromatic Thai coconut broths to classic European slow reductions and rich Indian tandoor aromatics, our kitchen is a tribute to world gastronomy. Accompanied by hand-crafted mocktails and velvety specialty coffee, every plate is prepared with absolute hygiene, care, and heartfelt warmth.",
+    "mainImage": "/images/about-interior.jpg",
+    "secondaryImage": "/images/about-food.jpg",
+    "ctaText": "Explore Our Menu",
+    "ctaLink": "#menu",
+    "sealText": "Crafted With Devotion",
+    "hallmarks": [
+      {
+        "id": "h1",
+        "title": "Global Harmony",
+        "desc": "Authentic Thai, Chinese, Continental, and Indian flavours side-by-side."
+      },
+      {
+        "id": "h2",
+        "title": "Obsessive Hygiene",
+        "desc": "Pristine kitchen standards, fresh sourcing, and uncompromised care."
+      },
+      {
+        "id": "h3",
+        "title": "Comfort & Vibe",
+        "desc": "Warm lighting, relaxed seating, and a space made for unforgettable conversations."
+      }
+    ]
+  },
+  "menu": {
+    "visible": true,
+    "badge": "CULINARY REPERTOIRE",
+    "title": "A World of Flavours, Under One Roof.",
+    "description": "From fragrant Asian woks and simmering copper handis to refined European gastronomy, handcrafted coffees, and vibrant mocktails — embark on an unforgettable culinary escape.",
+    "categories": [
+      {
+        "id": "thai",
+        "name": "Thai Cuisine",
+        "subtitle": "Aromatic & Vibrant",
+        "description": "A harmonious interplay of sweet, sour, salty, and fiery profiles, infused with fresh lemongrass, kaffir lime, and velvety coconut reductions.",
+        "image": "/images/menu-thai.jpg",
+        "tag": "Global Heritage",
+        "highlights": ["Aromatic Broths", "Coconut Reductions", "Balanced Heat"],
+        "visible": true,
+        "items": []
+      },
+      {
+        "id": "chinese",
+        "name": "Chinese Cuisine",
+        "subtitle": "Wok Mastered & Delicate",
+        "description": "Mastery of high-heat wok techniques and artisanal steamed delicacies, elevated with house-infused chili oils, aged reductions, and delicate textures.",
+        "image": "/images/menu-chinese.jpg",
+        "tag": "Wok Hei",
+        "highlights": ["Artisanal Steaming", "Aged Reductions", "Crisp Textures"],
+        "visible": true,
+        "items": []
+      },
+      {
+        "id": "continental",
+        "name": "Continental",
+        "subtitle": "Classic European Elegance",
+        "description": "Refined European gastronomy showcasing slow-braised cuts, velvety reductions, handcrafted pastas, and buttery brioche craftsmanship.",
+        "image": "/images/menu-continental.jpg",
+        "tag": "Chef’s Selection",
+        "highlights": ["Slow Braises", "Truffle Glazes", "Handcrafted Pastas"],
+        "visible": true,
+        "items": []
+      },
+      {
+        "id": "indian",
+        "name": "Indian Cuisine",
+        "subtitle": "Heritage & Spiced Warmth",
+        "description": "Time-honoured regional recipes simmered in traditional copper handis, celebrating warm Kashmiri saffron, cardamom, and buttery velvet gravies.",
+        "image": "/images/menu-indian.jpg",
+        "tag": "Clay Oven & Slow Pot",
+        "highlights": ["Copper Simmered", "Saffron Notes", "Tandoor Warmth"],
+        "visible": true,
+        "items": []
+      },
+      {
+        "id": "coffee",
+        "name": "Artisan Coffee",
+        "subtitle": "Roasted to Perfection",
+        "description": "Single-origin beans freshly ground for precision espresso extractions, silky micro-foam latte art, and slow-dripped aromatic morning brews.",
+        "image": "/images/menu-coffee.jpg",
+        "tag": "Signature Roasts",
+        "highlights": ["Single Origin", "Velvety Crema", "Specialty Brews"],
+        "visible": true,
+        "items": []
+      },
+      {
+        "id": "mocktails",
+        "name": "Craft Mocktails",
+        "subtitle": "Zero-Proof Botanical Elixirs",
+        "description": "Vibrant shaken concoctions combining ruby pomegranate, blood orange, smoked cinnamon, and sparkling botanical essences over hand-cut crystal ice.",
+        "image": "/images/menu-mocktails.jpg",
+        "tag": "Botanical & Shaken",
+        "highlights": ["Ruby Infusions", "Smoked Cinnamon", "Hand-Cut Ice"],
+        "visible": true,
+        "items": []
+      },
+      {
+        "id": "desserts",
+        "name": "Decadent Desserts",
+        "subtitle": "Sweet Confectionery Finales",
+        "description": "Indulgent finales crafted with dark single-origin chocolate, warm molten centers, caramelized crusts, and warm berry reductions.",
+        "image": "/images/menu-desserts.jpg",
+        "tag": "Sweet Artistry",
+        "highlights": ["Molten Centers", "Single-Origin Cocoa", "Caramel Crusts"],
+        "visible": true,
+        "items": []
+      }
+    ]
+  },
+  "signatureDishes": {
+    "visible": true,
+    "badge": "THE ART OF GASTRONOMY",
+    "title": "Crafted with Care. Served with Love.",
+    "description": "Every signature creation at Cafeana is an ode to culinary mastery. Prepared with patience, pristine ingredients, and an unwavering commitment to flavour perfection.",
+    "items": [
+      {
+        "id": 1,
+        "title": "The Burgundy Reserve Braise",
+        "category": "Continental Craft",
+        "description": "Slow-simmered prime tenderloin glazed in a 48-hour spiced red reduction, accompanied by roasted autumn root purée and charred rosemary aroma.",
+        "image": "/images/sig-1.jpg",
+        "accent": "Slow-Cooked 48 Hours",
+        "quote": "“Every layer of flavour tells the story of patience, passion, and precision.”",
+        "visible": true
+      },
+      {
+        "id": 2,
+        "title": "Velvet Crema Single Origin",
+        "category": "Artisan Roast",
+        "description": "Ethiopian Yirgacheffe roasted to a medium profile, extracted under 9 bars of pressure with steamed oat milk and fine dustings of Ceylon cinnamon.",
+        "image": "/images/sig-2.jpg",
+        "accent": "Altitude 1,900m Beans",
+        "quote": "“A morning awakening in a porcelain cup, kissed with golden crema.”",
+        "visible": true
+      },
+      {
+        "id": 3,
+        "title": "Crimson Ruby Elixir",
+        "category": "Botanical Mocktail",
+        "description": "Fresh pomegranate reduction steeped with wild hibiscus, blood orange bitters, and sparkling mineral spring water over hand-carved crystal ice.",
+        "image": "/images/sig-3.jpg",
+        "accent": "House Shaken Zero-Proof",
+        "quote": "“A symphony of ruby brightness, crisp botanical perfume, and refreshment.”",
+        "visible": true
+      },
+      {
+        "id": 4,
+        "title": "Dark Molten Cacao Gateau",
+        "category": "Confectionery Signature",
+        "description": "Warm 72% Madagascar dark chocolate cake that yields a cascading river of warm ganache, paired with whipped vanilla bean chantilly.",
+        "image": "/images/sig-4.jpg",
+        "accent": "Single-Origin 72% Cacao",
+        "quote": "“The ultimate indulgence, where warm chocolate meets pure serenity.”",
+        "visible": true
+      }
+    ]
+  },
+  "ambience": {
+    "visible": true,
+    "badge": "THE CAFEANA ATMOSPHERE",
+    "title": "Good Food. Great Company. Beautiful Moments.",
+    "description": "Designed as a tranquil sanctuary where time slows down. Immerse yourself in warm amber lighting, plush seating, and an ambience that celebrates genuine human connection.",
+    "moments": [
+      {
+        "id": 1,
+        "title": "Intimate Candlelit Booths",
+        "description": "Plush velvet burgundy seating tucked beneath amber pendant fixtures, designed for private conversations, deep connection, and relaxed indulgence.",
+        "image": "/images/ambience-1.jpg",
+        "tag": "Evening Mood",
+        "visible": true
+      },
+      {
+        "id": 2,
+        "title": "The Artisanal Brew Bar",
+        "description": "Witness master baristas grind, weigh, and pour each cup with meditative precision at our gleaming espresso and pour-over counter.",
+        "image": "/images/ambience-2.jpg",
+        "tag": "Morning Ritual",
+        "visible": true
+      },
+      {
+        "id": 3,
+        "title": "Lively Gatherings & Shared Laughter",
+        "description": "Spacious communal tables surrounded by warm wood finishes and golden lighting, where friends gather to share global platters and unforgettable memories.",
+        "image": "/images/ambience-3.jpg",
+        "tag": "Social Energy",
+        "visible": true
+      },
+      {
+        "id": 4,
+        "title": "Architectural Warmth & Design",
+        "description": "A thoughtful blend of brushed brass accents, rich espresso wood, and soft beige textures that welcome you into a tranquil culinary sanctuary.",
+        "image": "/images/ambience-4.jpg",
+        "tag": "Sanctuary",
+        "visible": true
+      }
+    ]
+  },
+  "gallery": {
+    "visible": true,
+    "badge": "VISUAL DIARY",
+    "title": "Moments Captured at Cafeana.",
+    "description": "Every plate served, every espresso pulled, and every evening shared becomes part of our living tapestry. Explore our curated photography.",
+    "items": [
+      {
+        "id": 1,
+        "title": "Artisan Latte Craft",
+        "category": "Coffee",
+        "image": "/images/gallery-1.jpg",
+        "visible": true
+      },
+      {
+        "id": 2,
+        "title": "Aromatic Thai Bowl",
+        "category": "Food",
+        "image": "/images/gallery-2.jpg",
+        "visible": true
+      },
+      {
+        "id": 3,
+        "title": "Ruby Sunset Mocktail",
+        "category": "Mocktails",
+        "image": "/images/gallery-3.jpg",
+        "visible": true
+      },
+      {
+        "id": 4,
+        "title": "Warm Candlelit Dining Hall",
+        "category": "Interior",
+        "image": "/images/gallery-4.jpg",
+        "visible": true
+      },
+      {
+        "id": 5,
+        "title": "Steamed Artisan Dim Sum",
+        "category": "Food",
+        "image": "/images/gallery-5.jpg",
+        "visible": true
+      },
+      {
+        "id": 6,
+        "title": "Molten Chocolate Decadence",
+        "category": "Desserts",
+        "image": "/images/gallery-6.jpg",
+        "visible": true
+      },
+      {
+        "id": 7,
+        "title": "Saffron Heritage Platter",
+        "category": "Food",
+        "image": "/images/gallery-7.jpg",
+        "visible": true
+      },
+      {
+        "id": 8,
+        "title": "The Evening Lounge",
+        "category": "Interior",
+        "image": "/images/gallery-8.jpg",
+        "visible": true
+      }
+    ]
+  },
+  "contact": {
+    "visible": true,
+    "badge": "PLAN YOUR VISIT",
+    "title": "Your Table. Your Moments. Your Cafeana.",
+    "description": "Whether you are reserving an intimate evening table, planning a celebration with dear friends, or seeking a quiet corner with artisanal coffee, we look forward to welcoming you.",
+    "restaurantName": "Cafeana Restaurant & Café",
+    "address": "[Restaurant Address Placeholder]",
+    "cityStateZip": "[City, State, Postal Code Placeholder]",
+    "phone": "[+XX XXXXX XXXXX / Contact Number Placeholder]",
+    "email": "reservations@cafeana-placeholder.com",
+    "hoursWeekday": "11:00 AM – 11:00 PM",
+    "hoursWeekend": "11:00 AM – 12:30 AM",
+    "hoursSunday": "10:30 AM – 11:30 PM",
+    "googleMapsEmbedUrl": "https://maps.google.com",
+    "ctaText": "Get Directions",
+    "socialLinks": {
+      "instagram": "https://instagram.com",
+      "facebook": "https://facebook.com",
+      "twitter": "https://twitter.com",
+      "youtube": "https://youtube.com"
+    }
+  },
+  "footer": {
+    "visible": true,
+    "logoImage": "",
+    "brandName": "CAFEANA",
+    "brandSubtitle": "Restaurant & Café",
+    "brandDescription": "Where global flavours meet comfort, quality, and good vibes. Every dish is prepared with care, passion, and meticulous hygiene.",
+    "tagline": "Snap. Sip. Savour. Repeat.",
+    "copyright": "CAFEANA Restaurant & Café. All rights reserved.",
+    "navigationTitle": "Navigation",
+    "navLinks": [
+      { "id": "fnav-1", "name": "Home", "href": "#home" },
+      { "id": "fnav-2", "name": "About", "href": "#about" },
+      { "id": "fnav-3", "name": "Menu", "href": "#menu" },
+      { "id": "fnav-4", "name": "Experience", "href": "#experience" },
+      { "id": "fnav-5", "name": "Gallery", "href": "#gallery" },
+      { "id": "fnav-6", "name": "Contact", "href": "#contact" }
+    ],
+    "hoursTitle": "Opening Hours",
+    "hoursList": [
+      { "id": "hr-1", "days": "Monday – Thursday", "hours": "11:00 AM – 11:00 PM" },
+      { "id": "hr-2", "days": "Friday – Saturday", "hours": "11:00 AM – 12:30 AM" },
+      { "id": "hr-3", "days": "Sunday", "hours": "10:30 AM – 11:30 PM" }
+    ],
+    "fourthColumn": {
+      "enabled": true,
+      "title": "The Promise",
+      "text": "“A Little Escape. A Lot of Flavour.” We craft every cup of coffee and every recipe with genuine devotion to culinary art and guest serenity.",
+      "tagline": "Snap. Sip. Savour. Repeat.",
+      "ctaText": "",
+      "ctaLink": ""
+    },
+    "promiseTitle": "The Promise",
+    "promiseText": "“A Little Escape. A Lot of Flavour.” We craft every cup of coffee and every recipe with genuine devotion to culinary art and guest serenity."
+  },
+  "appearance": {
+    "primaryBurgundy": "#651E32",
+    "deepBurgundy": "#3B101F",
+    "espresso": "#211817",
+    "warmCream": "#F7F0E7",
+    "champagneGold": "#C6A36A",
+    "softBeige": "#E8D8C5",
+    "fontHeading": "Cormorant Garamond",
+    "fontEditorial": "Playfair Display",
+    "fontBody": "DM Sans",
+    "buttonRadius": "2px",
+    "animationsEnabled": true
+  }
+}

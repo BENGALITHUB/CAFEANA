@@ -1,0 +1,235 @@
+@import './variables.css';
+
+/* Global Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: auto; /* Managed by Lenis */
+  background-color: var(--color-espresso);
+  color: var(--text-primary-light);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-espresso);
+  color: var(--text-primary-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-espresso);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-deep-burgundy);
+  border-radius: 4px;
+  border: 1px solid var(--color-gold-30);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-burgundy);
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text-primary-light);
+  line-height: 1.15;
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+p {
+  color: var(--text-secondary-light);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--duration-normal) var(--ease-smooth);
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Layout Utilities */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.section {
+  padding: 7rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-cream {
+  background-color: var(--color-warm-cream);
+  color: var(--text-primary-dark);
+}
+
+.section-cream h1,
+.section-cream h2,
+.section-cream h3,
+.section-cream h4 {
+  color: var(--text-primary-dark);
+}
+
+.section-cream p {
+  color: var(--text-secondary-dark);
+}
+
+.section-burgundy {
+  background-color: var(--color-deep-burgundy);
+  color: var(--text-primary-light);
+}
+
+.section-espresso {
+  background-color: var(--color-espresso);
+  color: var(--text-primary-light);
+}
+
+/* Decorative Divider & Elements */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, var(--color-champagne-gold), transparent);
+}
+
+.gold-diamond {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-champagne-gold);
+  transform: rotate(45deg);
+}
+
+/* Text Accent */
+.text-gold {
+  color: var(--color-champagne-gold) !important;
+}
+
+.text-burgundy {
+  color: var(--color-primary-burgundy) !important;
+}
+
+.tagline-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-champagne-gold);
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-gold-30);
+  background: rgba(33, 24, 23, 0.4);
+  backdrop-filter: blur(8px);
+  margin-bottom: 1.5rem;
+}
+
+.section-cream .tagline-badge {
+  background: rgba(232, 216, 197, 0.5);
+  border-color: rgba(101, 30, 50, 0.25);
+  color: var(--color-primary-burgundy);
+}
+
+/* Luxury Card & Frame Styles */
+.luxury-card {
+  background: rgba(59, 16, 31, 0.4);
+  border: 1px solid rgba(198, 163, 106, 0.2);
+  border-radius: 4px;
+  backdrop-filter: blur(12px);
+  transition: all var(--duration-normal) var(--ease-cinematic);
+}
+
+.luxury-card:hover {
+  border-color: var(--color-champagne-gold);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-5px);
+}
+
+.img-cover-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-cover-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-cinematic);
+}
+
+.luxury-card:hover .img-cover-wrap img {
+  transform: scale(1.06);
+}
+
+/* Accessible focus ring */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--color-champagne-gold);
+  outline-offset: 3px;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-primary-burgundy);
+  color: var(--color-warm-cream);
+}

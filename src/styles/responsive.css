@@ -1,0 +1,60 @@
+/* Responsive Breakpoints & Fluid Typography */
+
+@media (max-width: 1200px) {
+  :root {
+    --max-width: 1040px;
+    --space-3xl: 6rem;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --header-height: 80px;
+    --space-3xl: 5rem;
+  }
+  .section {
+    padding: 5rem 0;
+  }
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 70px;
+  }
+  .section {
+    padding: 4rem 0;
+  }
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  h2 {
+    font-size: 2.1rem !important;
+  }
+  h3 {
+    font-size: 1.6rem !important;
+  }
+  p {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.1rem !important;
+  }
+  h2 {
+    font-size: 1.85rem !important;
+  }
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
